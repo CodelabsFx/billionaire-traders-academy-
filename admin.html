@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="admin.css">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+    .admin-container{padding:20px}
+    table{width:100%;border-collapse:collapse}
+    th,td{padding:8px;border:1px solid #ddd}
+  </style>
+</head>
+<body class="admin-page">
+  <div class="admin-shell">
+    <aside class="admin-sidebar">
+      <div class="admin-brand"><img src="images/logos.png" alt=""><strong>Academy Office</strong></div>
+      <nav class="admin-nav">
+        <button data-tab="overview" class="tab-btn active">Overview</button>
+        <button data-tab="users" class="tab-btn">Users</button>
+        <button data-tab="analytics" class="tab-btn">Analytics</button>
+        <button data-tab="courses" class="tab-btn">Courses</button>
+        <button data-tab="lessons" class="tab-btn">Lessons</button>
+        <button data-tab="uploads" class="tab-btn">Resources</button>
+        <a href="dashboard.html" class="admin-nav button">Return to academy</a>
+      </nav>
+    </aside>
+    <main class="admin-main">
+      <header class="admin-topbar">
+        <div><h1>Administration</h1><p>Manage the academy with clarity and control.</p></div>
+        <span id="role-badge" class="role-badge">Verifying role...</span>
+      </header>
+      <div id="status"></div>
+
+    <section id="tab-overview" class="admin-tab is-active">
+      <div class="metric-grid">
+        <article class="metric-card"><span>Total members</span><strong id="metric-users">—</strong><small>Registered accounts</small></article>
+        <article class="metric-card"><span>Active members</span><strong id="metric-active-users">—</strong><small>Currently active</small></article>
+        <article class="metric-card"><span>Published courses</span><strong id="metric-published-courses">—</strong><small>Visible to learners</small></article>
+        <article class="metric-card"><span>Enrollments</span><strong id="metric-enrollments">—</strong><small>Total learner activity</small></article>
+      </div>
+      <div class="admin-card welcome-card">
+        <span class="eyebrow">Academy operations</span>
+        <h2>Good administration builds confident traders.</h2>
+        <p>Use the workspace to manage your community, publish structured learning, and maintain a trusted content library.</p>
+        <button class="admin-button tab-btn" data-tab="users">Review registered users</button>
+      </div>
+    </section>
+
+    <section id="tab-users" class="admin-tab admin-card">
+      <div class="section-heading"><div><span class="eyebrow">Directory</span><h2>Registered users</h2></div><span class="record-count" id="user-count"></span></div>
+      <div class="toolbar"><input id="user-search" type="search" placeholder="Search by name, email or username"><button id="user-search-button" class="admin-button">Search</button></div>
+      <div class="admin-table-wrap"><table id="users-table" class="admin-table">
+        <thead><tr><th>Member</th><th>Contact</th><th>Username</th><th>Account</th><th>Status</th><th>Role</th><th>Joined</th></tr></thead>
+        <tbody></tbody>
+      </table></div>
+    </section>
+
+    <section id="tab-analytics" class="admin-tab">
+      <div class="admin-card">
+        <div class="section-heading"><div><span class="eyebrow">Insights</span><h2>User behaviour</h2></div><select id="analytics-days"><option value="7">Last 7 days</option><option value="30" selected>Last 30 days</option><option value="90">Last 90 days</option></select></div>
+        <div class="admin-table-wrap"><table id="analytics-table" class="admin-table"><thead><tr><th>Event</th><th>Total events</th></tr></thead><tbody></tbody></table></div>
+      </div>
+    </section>
+
+    <section id="tab-courses" class="admin-tab admin-card">
+      <h2>Courses</h2>
+      <form id="course-form" class="admin-form">
+        <input name="title" placeholder="Course title" required />
+        <input name="slug" placeholder="slug" required />
+        <input name="price" placeholder="price" type="number" step="0.01" />
+        <label><input type="checkbox" name="is_published" /> Published</label>
+        <textarea name="description" placeholder="Description"></textarea>
+        <button type="submit" class="admin-button">Create Course</button>
+      </form>
+      <div class="admin-table-wrap"><table id="courses-table" class="admin-table"><thead><tr><th>ID</th><th>Title</th><th>Slug</th><th>Price</th><th>Published</th><th>Actions</th></tr></thead><tbody></tbody></table></div>
+    </section>
+
+    <section id="tab-lessons" class="admin-tab admin-card">
+      <h2>Lessons</h2>
+      <form id="lesson-form" class="admin-form">
+        <input name="course_id" placeholder="Course ID" required />
+        <input name="title" placeholder="Lesson title" required />
+        <input name="slug" placeholder="slug" />
+        <input name="lesson_order" placeholder="Order" type="number" />
+        <textarea name="content" placeholder="Content"></textarea>
+        <input name="video_url" placeholder="Video URL (or upload below)" />
+        <input name="video_duration" placeholder="Video duration (seconds)" type="number" min="0" />
+        <button type="submit" class="admin-button">Create Lesson</button>
+      </form>
+      <div class="admin-table-wrap"><table id="lessons-table" class="admin-table"><thead><tr><th>ID</th><th>Course</th><th>Title</th><th>Order</th><th>Actions</th></tr></thead><tbody></tbody></table></div>
+    </section>
+
+    <section id="tab-uploads" class="admin-tab admin-card">
+      <span class="eyebrow">Content library</span><h2>Video & resource uploads</h2>
+      <p class="muted">Upload MP4, WebM, MOV, M4V, images, documents, or PDFs. After uploading a video, copy its URL into the lesson form.</p>
+      <form id="upload-form" class="admin-form" enctype="multipart/form-data">
+        <label class="file-drop"><span>Choose a video or resource</span><input type="file" name="file" accept="video/mp4,video/webm,video/quicktime,image/*,.pdf,.doc,.docx" required /></label>
+        <button type="submit" class="admin-button">Upload</button>
+      </form>
+      <div id="upload-result"></div>
+    </section>
+    </main>
+  </div>
+  <script src="admin.js"></script>
+</body>
+</html>

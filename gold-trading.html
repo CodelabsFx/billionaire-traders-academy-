@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Master gold trading with our specialized courses and expert strategies. Learn technical analysis, risk management, and more.">
+    <title>Gold Trading - Billionaire Traders Academy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/logos.png">
+    <style>
+        /* Gold Page Navbar Special Styling */
+        .navbar {
+            background: linear-gradient(135deg, rgba(255, 193, 7, 0.15), rgba(255, 152, 0, 0.15)), linear-gradient(135deg, rgba(15, 23, 42, 0.98), rgba(30, 41, 59, 0.98));
+            border-bottom: 3px solid #ffc107;
+            box-shadow: 0 10px 30px rgba(255, 193, 7, 0.2);
+        }
+
+        .nav-logo {
+            filter: drop-shadow(0 0 8px rgba(255, 193, 7, 0.6));
+            transition: all 0.3s ease;
+        }
+
+        .nav-logo:hover {
+            filter: drop-shadow(0 0 15px rgba(255, 193, 7, 0.9));
+        }
+
+        .nav-brand {
+            background: linear-gradient(135deg, #ffc107, #ff9800);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+        .gold-hero {
+            background: linear-gradient(135deg, rgba(255, 193, 7, 0.95), rgba(255, 152, 0, 0.95)), url('images/gold.jpg');
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: multiply;
+            color: white;
+            padding: 60px 32px;
+            border-radius: 16px;
+            text-align: center;
+            margin-bottom: 48px;
+            box-shadow: 0 20px 50px rgba(255, 193, 7, 0.3);
+        }
+
+        .gold-hero h1 {
+            font-size: 3rem;
+            margin: 0 0 16px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            letter-spacing: -1px;
+        }
+
+        .gold-hero p {
+            font-size: 1.3rem;
+            margin: 0 0 24px;
+            opacity: 0.95;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 24px;
+        }
+
+        .gold-logo-special {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 24px;
+            background: white;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            font-size: 3rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .gold-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 48px;
+        }
+
+        .gold-stat-card {
+            background: linear-gradient(135deg, #fff9e6, #ffe6cc);
+            padding: 24px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(255, 193, 7, 0.2);
+            border-left: 4px solid #ffc107;
+        }
+
+        .gold-stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #f57f17;
+            margin-bottom: 8px;
+        }
+
+        .gold-stat-label {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .gold-intro {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 248, 225, 0.95));
+            padding: 32px;
+            border-radius: 12px;
+            margin-bottom: 48px;
+            border-left: 6px solid #ffc107;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .gold-intro h2 {
+            margin-top: 0;
+            color: #0f172a;
+            margin-bottom: 16px;
+        }
+
+        .gold-intro p {
+            color: #334155;
+            line-height: 1.8;
+            margin: 0 0 12px;
+        }
+
+        .gold-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            margin: 32px 0;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-top: 4px solid #ffc107;
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 12px;
+        }
+
+        .feature-card h3 {
+            margin: 0 0 12px;
+            color: #0f172a;
+        }
+
+        .feature-card p {
+            margin: 0;
+            color: #64748b;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .gold-courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 24px;
+            margin: 32px 0;
+        }
+
+        .gold-course-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border-top: 4px solid #ffc107;
+        }
+
+        .gold-course-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(255, 193, 7, 0.2);
+        }
+
+        .course-header-gold {
+            background: linear-gradient(135deg, #ffc107, #ff9800);
+            color: white;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .course-header-gold::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+            opacity: 0.5;
+        }
+
+        .course-header-gold h3 {
+            margin: 0;
+            position: relative;
+            z-index: 1;
+            font-size: 1.3rem;
+        }
+
+        .course-rating {
+            font-size: 0.9rem;
+            margin-top: 8px;
+            opacity: 0.9;
+        }
+
+        .course-body-gold {
+            padding: 20px;
+        }
+
+        .course-desc-gold {
+            color: #64748b;
+            font-size: 0.95rem;
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+
+        .course-details-gold {
+            display: flex;
+            gap: 16px;
+            margin: 16px 0;
+            font-size: 0.85rem;
+            color: #94a3b8;
+        }
+
+        .course-detail-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .course-price {
+            font-size: 1.5rem;
+            color: #ffc107;
+            font-weight: 700;
+            margin: 16px 0;
+        }
+
+        .trading-strategies {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 248, 225, 0.95));
+            padding: 32px;
+            border-radius: 12px;
+            margin: 48px 0;
+            border: 2px solid #ffc107;
+        }
+
+        .trading-strategies h2 {
+            margin-top: 0;
+            color: #0f172a;
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .strategies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .strategy-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid #ffc107;
+        }
+
+        .strategy-card h3 {
+            margin-top: 0;
+            margin-bottom: 12px;
+            color: #0f172a;
+        }
+
+        .strategy-card p {
+            margin: 0 0 12px;
+            color: #64748b;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .risk-level {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .risk-low {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .risk-medium {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .risk-high {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .market-insight {
+            background: linear-gradient(135deg, rgba(255, 193, 7, 0.1), rgba(255, 152, 0, 0.1));
+            padding: 24px;
+            border-radius: 12px;
+            margin: 48px 0;
+            border-left: 6px solid #ffc107;
+        }
+
+        .market-insight h2 {
+            margin-top: 0;
+            color: #0f172a;
+        }
+
+        .market-facts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .fact {
+            background: white;
+            padding: 16px;
+            border-radius: 8px;
+            border-bottom: 3px solid #ffc107;
+        }
+
+        .fact-title {
+            font-weight: 600;
+            color: #0f172a;
+            margin-bottom: 6px;
+        }
+
+        .fact-value {
+            font-size: 1.2rem;
+            color: #f57f17;
+            font-weight: 700;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #ffc107, #ff9800);
+            color: white;
+            padding: 48px 32px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 48px 0;
+            box-shadow: 0 15px 35px rgba(255, 193, 7, 0.3);
+        }
+
+        .cta-section h2 {
+            margin: 0 0 16px;
+            font-size: 2rem;
+        }
+
+        .cta-section p {
+            margin: 0 0 24px;
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+
+        .gold-faq {
+            margin: 48px 0;
+        }
+
+        .gold-faq h2 {
+            margin-top: 0;
+            text-align: center;
+            margin-bottom: 32px;
+            color: #0f172a;
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 12px;
+            border-radius: 8px;
+            border-left: 4px solid #ffc107;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .faq-question {
+            padding: 16px;
+            background: #f8fafc;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: #0f172a;
+            user-select: none;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: #dbeafe;
+        }
+
+        .faq-question::after {
+            content: '▼';
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-question::after {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            display: none;
+            padding: 16px;
+            color: #64748b;
+            line-height: 1.7;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .newsletter-form {
+            background: white;
+            padding: 32px;
+            border-radius: 12px;
+            margin: 48px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .newsletter-form h2 {
+            margin-top: 0;
+            text-align: center;
+            color: #0f172a;
+        }
+
+        .newsletter-form p {
+            text-align: center;
+            color: #64748b;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 0.95rem;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #ffc107;
+            box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.1);
+        }
+
+        .form-group button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #ffc107, #ff9800);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .form-group button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255, 193, 7, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .gold-hero h1 {
+                font-size: 2rem;
+            }
+
+            .gold-hero p {
+                font-size: 1.1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .gold-courses-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .strategies-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-section {
+                padding: 32px 16px;
+            }
+
+            .cta-section h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img class="nav-logo" src="images/logos.png" alt="Logo">
+                <span>Billionaire Traders Academy</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                <li><a href="courses.html" class="nav-link">Courses</a></li>
+                <li><a href="gold-trading.html" class="nav-link active" style="background: linear-gradient(135deg, #ffc107, #ff9800); box-shadow: 0 5px 15px rgba(255, 193, 7, 0.4); border-radius: 8px;">🏆 Gold Trading</a></li>
+                <li><a href="lessons.html" class="nav-link">My Learning</a></li>
+                <li><a href="profile.html" class="nav-link">Profile</a></li>
+                <li><a href="settings.html" class="nav-link">Settings</a></li>
+                <li><a href="index.html" class="nav-link logout-btn">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="gold-trading-container">
+        <!-- Gold Trading Hero Section -->
+        <section class="gold-hero">
+            <div class="gold-logo-special">✨</div>
+            <h1>✨ Master Gold Trading</h1>
+            <p>Learn to trade one of the world's most precious commodities. Discover strategies, market insights, and expert-led courses to become a confident gold trader.</p>
+            <div class="hero-buttons">
+                <button class="btn-primary">Explore Courses</button>
+                <button class="btn-outline" style="color: white; border-color: white;">Free Guide</button>
+            </div>
+        </section>
+
+        <!-- Market Statistics -->
+        <section class="gold-stats">
+            <div class="gold-stat-card">
+                <div class="gold-stat-value">$2,050</div>
+                <div class="gold-stat-label">Current Gold Price (per oz)</div>
+            </div>
+            <div class="gold-stat-card">
+                <div class="gold-stat-value">+3.2%</div>
+                <div class="gold-stat-label">Year-to-Date Performance</div>
+            </div>
+            <div class="gold-stat-card">
+                <div class="gold-stat-value">24/5</div>
+                <div class="gold-stat-label">Trading Hours</div>
+            </div>
+            <div class="gold-stat-card">
+                <div class="gold-stat-value">$200B+</div>
+                <div class="gold-stat-label">Daily Trading Volume</div>
+            </div>
+        </section>
+
+        <!-- Gold Trading Introduction -->
+        <section class="gold-intro">
+            <h2>Why Trade Gold?</h2>
+            <p>Gold is one of the most traded commodities globally, offering exceptional opportunities for traders of all levels. As a safe-haven asset, gold tends to move independently from stocks and currencies, making it an excellent diversification tool for your trading portfolio.</p>
+            <p>Whether you're interested in day trading, swing trading, or long-term investing, gold provides liquidity, accessibility, and consistent trading opportunities 24 hours a day during market hours.</p>
+            
+            <h3 style="margin-top: 24px; color: #0f172a;">Key Benefits:</h3>
+            <div class="gold-features">
+                <div class="feature-card">
+                    <div class="feature-icon">💪</div>
+                    <h3>High Liquidity</h3>
+                    <p>Trade large volumes without significant price slippage. Gold markets never sleep, offering constant trading opportunities.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Safe Haven Asset</h3>
+                    <p>Gold maintains value during economic uncertainty, making it a reliable hedge against inflation and market volatility.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>Strong Trends</h3>
+                    <p>Gold exhibits clear trending patterns, making it ideal for technical analysis and trend-following strategies.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⏰</div>
+                    <h3>24/5 Trading</h3>
+                    <p>Trade gold across multiple exchanges and time zones, with opportunities virtually every day of the week.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3>Global Impact</h3>
+                    <p>Trade influenced by worldwide economic factors, geopolitical events, and central bank policies.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💡</div>
+                    <h3>Multiple Instruments</h3>
+                    <p>Trade through spot prices, futures, ETFs, or forex pairs—choose the instrument that suits your strategy.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gold Trading Courses -->
+        <section>
+            <h2 style="text-align: center; margin-bottom: 32px; color: #0f172a; font-size: 1.8rem;">Gold Trading Courses</h2>
+            <div class="gold-courses-grid">
+                <div class="gold-course-card">
+                    <div class="course-header-gold">
+                        <h3>Gold Trading Fundamentals</h3>
+                        <div class="course-rating">⭐ 4.9 (1,230 reviews)</div>
+                    </div>
+                    <div class="course-body-gold">
+                        <p class="course-desc-gold">Learn the basics of gold trading, market structure, and how to read price charts. Perfect for beginners.</p>
+                        <div class="course-details-gold">
+                            <div class="course-detail-item">📚 8 Lessons</div>
+                            <div class="course-detail-item">⏱️ 6 Hours</div>
+                            <div class="course-detail-item">🟢 Beginner</div>
+                        </div>
+                        <div class="course-price">$49.99</div>
+                        <button class="btn-primary" style="width: 100%; border: none;">Enroll Now</button>
+                    </div>
+                </div>
+
+                <div class="gold-course-card">
+                    <div class="course-header-gold">
+                        <h3>Gold Technical Analysis Pro</h3>
+                        <div class="course-rating">⭐ 4.8 (1,580 reviews)</div>
+                    </div>
+                    <div class="course-body-gold">
+                        <p class="course-desc-gold">Master technical indicators, chart patterns, and advanced analysis techniques specific to gold markets.</p>
+                        <div class="course-details-gold">
+                            <div class="course-detail-item">📚 12 Lessons</div>
+                            <div class="course-detail-item">⏱️ 10 Hours</div>
+                            <div class="course-detail-item">🟡 Intermediate</div>
+                        </div>
+                        <div class="course-price">$79.99</div>
+                        <button class="btn-primary" style="width: 100%; border: none;">Enroll Now</button>
+                    </div>
+                </div>
+
+                <div class="gold-course-card">
+                    <div class="course-header-gold">
+                        <h3>Gold Trading Mastery</h3>
+                        <div class="course-rating">⭐ 4.9 (945 reviews)</div>
+                    </div>
+                    <div class="course-body-gold">
+                        <p class="course-desc-gold">Advanced strategies, risk management, and real-world trading scenarios. For experienced traders ready to profit.</p>
+                        <div class="course-details-gold">
+                            <div class="course-detail-item">📚 18 Lessons</div>
+                            <div class="course-detail-item">⏱️ 16 Hours</div>
+                            <div class="course-detail-item">🔴 Advanced</div>
+                        </div>
+                        <div class="course-price">$129.99</div>
+                        <button class="btn-primary" style="width: 100%; border: none;">Enroll Now</button>
+                    </div>
+                </div>
+
+                <div class="gold-course-card">
+                    <div class="course-header-gold">
+                        <h3>Gold Futures Trading</h3>
+                        <div class="course-rating">⭐ 4.7 (756 reviews)</div>
+                    </div>
+                    <div class="course-body-gold">
+                        <p class="course-desc-gold">Learn to trade gold futures contracts, leverage strategies, and how to manage futures positions effectively.</p>
+                        <div class="course-details-gold">
+                            <div class="course-detail-item">📚 10 Lessons</div>
+                            <div class="course-detail-item">⏱️ 8 Hours</div>
+                            <div class="course-detail-item">🟡 Intermediate</div>
+                        </div>
+                        <div class="course-price">$89.99</div>
+                        <button class="btn-primary" style="width: 100%; border: none;">Enroll Now</button>
+                    </div>
+                </div>
+
+                <div class="gold-course-card">
+                    <div class="course-header-gold">
+                        <h3>Gold Day Trading Secrets</h3>
+                        <div class="course-rating">⭐ 4.8 (1,123 reviews)</div>
+                    </div>
+                    <div class="course-body-gold">
+                        <p class="course-desc-gold">Specialized course for day traders. Scalping techniques, intraday patterns, and quick profit strategies.</p>
+                        <div class="course-details-gold">
+                            <div class="course-detail-item">📚 15 Lessons</div>
+                            <div class="course-detail-item">⏱️ 12 Hours</div>
+                            <div class="course-detail-item">🔴 Advanced</div>
+                        </div>
+                        <div class="course-price">$99.99</div>
+                        <button class="btn-primary" style="width: 100%; border: none;">Enroll Now</button>
+                    </div>
+                </div>
+
+                <div class="gold-course-card">
+                    <div class="course-header-gold">
+                        <h3>Gold Price Forecasting</h3>
+                        <div class="course-rating">⭐ 4.6 (543 reviews)</div>
+                    </div>
+                    <div class="course-body-gold">
+                        <p class="course-desc-gold">Learn to forecast gold prices using fundamental analysis, macroeconomic indicators, and geopolitical factors.</p>
+                        <div class="course-details-gold">
+                            <div class="course-detail-item">📚 9 Lessons</div>
+                            <div class="course-detail-item">⏱️ 7 Hours</div>
+                            <div class="course-detail-item">🟡 Intermediate</div>
+                        </div>
+                        <div class="course-price">$69.99</div>
+                        <button class="btn-primary" style="width: 100%; border: none;">Enroll Now</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trading Strategies Section -->
+        <section class="trading-strategies">
+            <h2>Popular Gold Trading Strategies</h2>
+            <div class="strategies-grid">
+                <div class="strategy-card">
+                    <h3>🔄 Support & Resistance Trading</h3>
+                    <p>Identify key support and resistance levels where gold tends to bounce or break. Execute trades at these critical price points.</p>
+                    <span class="risk-level risk-low">Low Risk</span>
+                </div>
+                <div class="strategy-card">
+                    <h3>📊 Trend Following</h3>
+                    <p>Follow the direction of the gold trend using moving averages and trend lines. Ride the momentum for consistent profits.</p>
+                    <span class="risk-level risk-low">Low Risk</span>
+                </div>
+                <div class="strategy-card">
+                    <h3>⚡ Breakout Trading</h3>
+                    <p>Wait for gold to break through key resistance levels, then enter with confirmation. Capitalize on explosive price movements.</p>
+                    <span class="risk-level risk-medium">Medium Risk</span>
+                </div>
+                <div class="strategy-card">
+                    <h3>📉 Reversal Trading</h3>
+                    <p>Trade reversals at market extremes using divergences and price action patterns. Perfect for swing traders.</p>
+                    <span class="risk-level risk-medium">Medium Risk</span>
+                </div>
+                <div class="strategy-card">
+                    <h3>⚙️ Scalping</h3>
+                    <p>Make quick, small profits by trading the intraday volatility of gold. Requires precision and fast execution.</p>
+                    <span class="risk-level risk-high">High Risk</span>
+                </div>
+                <div class="strategy-card">
+                    <h3>🌍 Macro Strategy</h3>
+                    <p>Trade gold based on macroeconomic news, interest rates, and geopolitical events that move the market.</p>
+                    <span class="risk-level risk-medium">Medium Risk</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Market Insights -->
+        <section class="market-insight">
+            <h2>Gold Market Insights</h2>
+            <div class="market-facts">
+                <div class="fact">
+                    <div class="fact-title">Trading Pairs</div>
+                    <div class="fact-value">XAU/USD</div>
+                </div>
+                <div class="fact">
+                    <div class="fact-title">Trading Hours</div>
+                    <div class="fact-value">Sunday - Friday</div>
+                </div>
+                <div class="fact">
+                    <div class="fact-title">Volatility</div>
+                    <div class="fact-value">High (15-30 pips)</div>
+                </div>
+                <div class="fact">
+                    <div class="fact-title">Spread (Avg)</div>
+                    <div class="fact-value">1-3 pips</div>
+                </div>
+                <div class="fact">
+                    <div class="fact-title">Leverage</div>
+                    <div class="fact-value">Up to 100:1</div>
+                </div>
+                <div class="fact">
+                    <div class="fact-title">Min. Investment</div>
+                    <div class="fact-value">$100-500</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta-section">
+            <h2>Ready to Start Trading Gold?</h2>
+            <p>Join thousands of successful traders who have mastered gold trading. Begin your journey today!</p>
+            <button class="btn-primary">Enroll in a Course Now</button>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="gold-faq">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <div class="faq-question">How do I start trading gold?</div>
+                <div class="faq-answer">Start by opening an account with a regulated broker, completing our beginner course on gold fundamentals, and starting with small positions to practice. We recommend beginning with a demo account to build confidence.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What's the best time to trade gold?</div>
+                <div class="faq-answer">Gold trades 24/5, but the highest volume occurs during New York and London trading sessions (3 PM - 11 PM UTC). We recommend trading during these peak hours for better liquidity and tighter spreads.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">How much capital do I need to start?</div>
+                <div class="faq-answer">You can start gold trading with as little as $100-500 with a reputable broker. However, we recommend starting with at least $1,000-5,000 to implement proper risk management and trade comfortably.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What factors affect gold prices?</div>
+                <div class="faq-answer">Gold prices are influenced by US dollar strength, interest rates, inflation expectations, geopolitical tensions, central bank policies, and safe-haven demand. Understanding these factors is crucial for successful trading.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Can I trade gold on weekends?</div>
+                <div class="faq-answer">While spot gold markets close on weekends, some brokers offer gold trading during limited weekend hours. Most active trading occurs Monday through Friday during regular market hours.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What's the difference between XAU/USD and Gold Futures?</div>
+                <div class="faq-answer">XAU/USD is spot gold traded on the forex market, while gold futures are contracts traded on commodity exchanges. Spot gold offers 24/5 trading with lower leverage, while futures offer higher leverage and specific contract specifications.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">How do I manage risk in gold trading?</div>
+                <div class="faq-answer">Use stop-loss orders, position sizing based on risk percentage, diversification, and take-profit targets. Never risk more than 1-2% of your account on a single trade. Our advanced courses cover comprehensive risk management strategies.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Is gold trading suitable for beginners?</div>
+                <div class="faq-answer">Yes! Gold's popularity and clear trends make it suitable for beginners. However, proper education is essential. Start with our beginner course, use a demo account first, and practice disciplined trading habits.</div>
+            </div>
+        </section>
+
+        <!-- Newsletter Signup -->
+        <section class="newsletter-form">
+            <h2>Get Gold Trading Signals</h2>
+            <p>Join our community and receive exclusive trading signals, market analysis, and tips delivered daily.</p>
+            <form>
+                <div class="form-group">
+                    <input type="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="Full Name" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Subscribe for Free</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content footer-compact">
+            <div class="footer-brand"><span class="footer-kicker">Gold Trading Division</span><p>Learn with discipline. Trade with confidence.</p></div>
+            <div class="footer-column"><h4>Navigate</h4><a href="courses.html">Courses</a><a href="lessons.html">My Learning</a><a href="dashboard.html">Dashboard</a></div>
+            <div class="footer-column"><h4>Contact</h4><a href="mailto:support@billionairetradersacademy.com">Email the academy</a><a href="tel:+254748446403">+254 748 446 403</a></div>
+        </div>
+        <div class="footer-bottom"><span>&copy; 2026 Billionaire Traders Academy.</span><span><a href="#">Privacy</a><a href="#">Terms</a></span></div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-item').forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                item.classList.toggle('active');
+            });
+        });
+
+        // Newsletter Form
+        document.querySelector('.newsletter-form form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for subscribing! Check your email for our daily signals.');
+            this.reset();
+        });
+
+        // CTA Button
+        document.querySelector('.cta-section button').addEventListener('click', () => {
+            window.location.href = 'courses.html';
+        });
+    </script>
+</body>
+</html>

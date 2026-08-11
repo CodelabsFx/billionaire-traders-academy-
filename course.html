@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Course | Billionaire Traders Academy</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="courses-container">
+    <a href="courses.html">Back to courses</a>
+    <article id="course-detail" class="course-item">
+      <h1>Loading course...</h1>
+    </article>
+  </main>
+  <script>
+    (async function () {
+      const id = new URLSearchParams(location.search).get('id');
+      const api = window.API_URL || window.location.origin;
+      const target = document.getElementById('course-detail');
+      if (!id) { target.textContent = 'Course not specified.'; return; }
+      try {
+        const response = await fetch(api + '/api/courses/' + encodeURIComponent(id));
+        if (!response.ok) throw new Error('Course not found');
+        const data = await response.json();
+        target.replaceChildren();
+        const title = document.createElement('h1');
+        title.textContent = data.course.title;
+        const description = document.createElement('p');
+        description.textContent = data.course.description || '';
+        const enroll = document.createElement('button');
+        enroll.className = 'btn-primary';
+        enroll.textContent = 'Enroll in course';
+        enroll.onclick = async function () {
+          const token = localStorage.getItem('authToken');
+          if (!token) { location.href = 'index.html'; return; }
+          const result = await fetch(api + '/api/courses/' + id + '/enroll', {
+            method: 'POST', headers: { Authorization: 'Bearer ' + token }
+          });
+          if (result.ok) fetch(api + '/api/events', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + token },
+            body: JSON.stringify({ event: 'cta_click', description: 'Course enrollment', relatedEntity: 'course', relatedEntityId: id }),
+            keepalive: true
+          }).catch(() => {});
+          alert(result.ok ? 'Enrollment confirmed.' : 'Enrollment could not be completed.');
+        };
+        const lessons = document.createElement('ul');
+        data.lessons.forEach(lesson => {
+          const item = document.createElement('li');
+          item.textContent = lesson.title;
+          lessons.appendChild(item);
+        });
+        target.append(title, description, enroll, lessons);
+      } catch (error) {
+        target.textContent = error.message;
+      }
+    }());
+  </script>
+</body>
+</html>

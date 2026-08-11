@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="View your profile, achievements, and trading statistics at Billionaire Traders Academy.">
+    <title>Profile - Billionaire Traders Academy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/logos.png">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img class="nav-logo" src="images/logos.png" alt="Logo">
+                <span>Billionaire Traders Academy</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                <li><a href="courses.html" class="nav-link">Courses</a></li>
+                <li><a href="gold-trading.html" class="nav-link">Gold Trading</a></li>
+                <li><a href="lessons.html" class="nav-link">My Learning</a></li>
+                <li><a href="profile.html" class="nav-link active">Profile</a></li>
+                <li><a href="settings.html" class="nav-link">Settings</a></li>
+                <li><a href="index.html" class="nav-link logout-btn">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="profile-container">
+        <div class="profile-header">
+            <div class="profile-banner"></div>
+            <div class="profile-info">
+                <div class="profile-avatar">👤</div>
+                <div class="profile-details">
+                    <h1 id="profile-name">John Doe</h1>
+                    <p id="profile-email">john.doe@email.com</p>
+                    <p class="profile-member">Member since January 2024</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="profile-grid">
+            <!-- Personal Information -->
+            <section class="profile-section">
+                <div class="section-header">
+                    <h2>Personal Information</h2>
+                    <button class="btn-small">Edit</button>
+                </div>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <label>First Name</label>
+                        <p>John</p>
+                    </div>
+                    <div class="info-item">
+                        <label>Last Name</label>
+                        <p>Doe</p>
+                    </div>
+                    <div class="info-item">
+                        <label>Email</label>
+                        <p>john.doe@email.com</p>
+                    </div>
+                    <div class="info-item">
+                        <label>Phone</label>
+                        <p>+254 712 345 678</p>
+                    </div>
+                    <div class="info-item">
+                        <label>Country</label>
+                        <p>Kenya</p>
+                    </div>
+                    <div class="info-item">
+                        <label>Date of Birth</label>
+                        <p>January 15, 1990</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Trading Profile -->
+            <section class="profile-section">
+                <div class="section-header">
+                    <h2>Trading Profile</h2>
+                    <button class="btn-small">Edit</button>
+                </div>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <label>Trading Experience</label>
+                        <p>2-5 Years</p>
+                    </div>
+                    <div class="info-item">
+                        <label>Preferred Strategy</label>
+                        <p>Day Trading</p>
+                    </div>
+                    <div class="info-item">
+                        <label>Risk Tolerance</label>
+                        <p>Moderate</p>
+                    </div>
+                    <div class="info-item">
+                        <label>Account Type</label>
+                        <p>Premium</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Achievements & Badges -->
+            <section class="profile-section full-width">
+                <h2>Achievements & Badges</h2>
+                <div class="badges-grid">
+                    <div class="badge-card">
+                        <div class="badge-icon">🏆</div>
+                        <h3>Quick Learner</h3>
+                        <p>Completed 5 courses in 30 days</p>
+                    </div>
+                    <div class="badge-card">
+                        <div class="badge-icon">⭐</div>
+                        <h3>Top Performer</h3>
+                        <p>Scored above 90% in all tests</p>
+                    </div>
+                    <div class="badge-card">
+                        <div class="badge-icon">💯</div>
+                        <h3>Perfect Score</h3>
+                        <p>100% on Forex Fundamentals</p>
+                    </div>
+                    <div class="badge-card">
+                        <div class="badge-icon">🔥</div>
+                        <h3>On Fire</h3>
+                        <p>7-day learning streak</p>
+                    </div>
+                    <div class="badge-card">
+                        <div class="badge-icon">📚</div>
+                        <h3>Bookworm</h3>
+                        <p>Read all recommended materials</p>
+                    </div>
+                    <div class="badge-card">
+                        <div class="badge-icon">🌟</div>
+                        <h3>Community Star</h3>
+                        <p>Helped 10+ community members</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Learning Statistics -->
+            <section class="profile-section full-width">
+                <h2>Learning Statistics</h2>
+                <div class="stats-overview">
+                    <div class="stat-overview-card">
+                        <h3>Total Hours Learned</h3>
+                        <p class="stat-big">124</p>
+                        <span>hours</span>
+                    </div>
+                    <div class="stat-overview-card">
+                        <h3>Courses Completed</h3>
+                        <p class="stat-big">8</p>
+                        <span>out of 12 enrolled</span>
+                    </div>
+                    <div class="stat-overview-card">
+                        <h3>Average Score</h3>
+                        <p class="stat-big">92%</p>
+                        <span>on quizzes</span>
+                    </div>
+                    <div class="stat-overview-card">
+                        <h3>Certificates Earned</h3>
+                        <p class="stat-big">8</p>
+                        <span>certificates</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Subscription Status -->
+            <section class="profile-section">
+                <h2>Subscription Status</h2>
+                <div class="subscription-card">
+                    <div class="subscription-badge">Active</div>
+                    <h3>Premium Plan</h3>
+                    <p>Full access to all courses and materials</p>
+                    <div class="subscription-details">
+                        <p><strong>Next Billing Date:</strong> <span id="renewal-date">September 10, 2024</span></p>
+                        <p><strong>Billing Amount:</strong> $49.99/month</p>
+                    </div>
+                    <button class="btn-outline">Manage Subscription</button>
+                </div>
+            </section>
+
+            <!-- Download Certificates -->
+            <section class="profile-section">
+                <h2>Certificates</h2>
+                <div class="certificates-list">
+                    <div class="certificate-item">
+                        <div class="cert-icon">📜</div>
+                        <div class="cert-info">
+                            <h3>Forex Fundamentals</h3>
+                            <p>Completed on June 15, 2024</p>
+                        </div>
+                        <button class="btn-small">Download</button>
+                    </div>
+                    <div class="certificate-item">
+                        <div class="cert-icon">📜</div>
+                        <div class="cert-info">
+                            <h3>Technical Analysis Basics</h3>
+                            <p>Completed on July 20, 2024</p>
+                        </div>
+                        <button class="btn-small">Download</button>
+                    </div>
+                    <div class="certificate-item">
+                        <div class="cert-icon">📜</div>
+                        <div class="cert-info">
+                            <h3>Market Volatility Management</h3>
+                            <p>Completed on August 5, 2024</p>
+                        </div>
+                        <button class="btn-small">Download</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content footer-compact">
+            <div class="footer-brand"><span class="footer-kicker">Billionaire Traders Academy</span><p>Learn with discipline. Trade with confidence.</p></div>
+            <div class="footer-column"><h4>Navigate</h4><a href="dashboard.html">Dashboard</a><a href="courses.html">Courses</a><a href="settings.html">Settings</a></div>
+            <div class="footer-column"><h4>Contact</h4><a href="mailto:support@billionairetradersacademy.com">Email the academy</a><a href="tel:+254748446403">+254 748 446 403</a></div>
+        </div>
+        <div class="footer-bottom"><span>&copy; 2026 Billionaire Traders Academy.</span><span><a href="#">Privacy</a><a href="#">Terms</a></span></div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Get user data from localStorage
+        const username = localStorage.getItem('username') || 'John Doe';
+        const email = localStorage.getItem('email') || 'john.doe@email.com';
+        
+        document.getElementById('profile-name').textContent = username;
+        document.getElementById('profile-email').textContent = email;
+    </script>
+</body>
+</html>

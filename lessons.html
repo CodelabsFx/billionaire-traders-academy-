@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Track your learning progress and continue with your enrolled courses at Billionaire Traders Academy.">
+    <title>My Learning - Billionaire Traders Academy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/logos.png">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img class="nav-logo" src="images/logos.png" alt="Logo">
+                <span>Billionaire Traders Academy</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                <li><a href="courses.html" class="nav-link">Courses</a></li>
+                <li><a href="gold-trading.html" class="nav-link">Gold Trading</a></li>
+                <li><a href="lessons.html" class="nav-link active">My Learning</a></li>
+                <li><a href="profile.html" class="nav-link">Profile</a></li>
+                <li><a href="settings.html" class="nav-link">Settings</a></li>
+                <li><a href="index.html" class="nav-link logout-btn">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="lessons-container">
+        <header class="lessons-header">
+            <h1>My Learning Progress</h1>
+            <p>Track your lessons and continue where you left off</p>
+        </header>
+
+        <div class="lessons-tabs">
+            <button class="tab-btn active" data-tab="in-progress">In Progress</button>
+            <button class="tab-btn" data-tab="completed">Completed</button>
+            <button class="tab-btn" data-tab="all">All Lessons</button>
+        </div>
+
+        <div class="tab-content active" id="in-progress">
+            <div class="lessons-list">
+                <div class="lesson-card">
+                    <div class="lesson-header">
+                        <h3>Forex Fundamentals - Module 3</h3>
+                        <span class="lesson-status">In Progress</span>
+                    </div>
+                    <p class="lesson-description">Understanding Support and Resistance Levels</p>
+                    <div class="lesson-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 65%"></div>
+                        </div>
+                        <span>65% Complete</span>
+                    </div>
+                    <div class="lesson-meta">
+                        <span>📚 5 lessons</span>
+                        <span>⏱️ 3.5 hours</span>
+                        <span>⭐ 4.8</span>
+                    </div>
+                    <button class="btn-primary">Continue Lesson</button>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-header">
+                        <h3>Technical Analysis - Module 1</h3>
+                        <span class="lesson-status">In Progress</span>
+                    </div>
+                    <p class="lesson-description">Introduction to Charting and Technical Indicators</p>
+                    <div class="lesson-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 25%"></div>
+                        </div>
+                        <span>25% Complete</span>
+                    </div>
+                    <div class="lesson-meta">
+                        <span>📚 8 lessons</span>
+                        <span>⏱️ 6 hours</span>
+                        <span>⭐ 4.9</span>
+                    </div>
+                    <button class="btn-primary">Continue Lesson</button>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-header">
+                        <h3>Market Volatility - Module 2</h3>
+                        <span class="lesson-status">In Progress</span>
+                    </div>
+                    <p class="lesson-description">Managing and Trading High-Volatility Periods</p>
+                    <div class="lesson-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 40%"></div>
+                        </div>
+                        <span>40% Complete</span>
+                    </div>
+                    <div class="lesson-meta">
+                        <span>📚 4 lessons</span>
+                        <span>⏱️ 2.5 hours</span>
+                        <span>⭐ 4.7</span>
+                    </div>
+                    <button class="btn-primary">Continue Lesson</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="completed">
+            <div class="lessons-list">
+                <div class="lesson-card completed">
+                    <div class="lesson-header">
+                        <h3>Getting Started with Forex - Module 1</h3>
+                        <span class="lesson-status">Completed</span>
+                    </div>
+                    <p class="lesson-description">Introduction to the Foreign Exchange Market</p>
+                    <div class="lesson-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 100%"></div>
+                        </div>
+                        <span>100% Complete</span>
+                    </div>
+                    <div class="lesson-meta">
+                        <span>📚 5 lessons</span>
+                        <span>⏱️ 4 hours</span>
+                        <span>🏆 Certificate Earned</span>
+                    </div>
+                    <button class="btn-outline">Review</button>
+                </div>
+
+                <div class="lesson-card completed">
+                    <div class="lesson-header">
+                        <h3>Currency Pairs Explained - Module 2</h3>
+                        <span class="lesson-status">Completed</span>
+                    </div>
+                    <p class="lesson-description">Understanding Major, Minor, and Exotic Pairs</p>
+                    <div class="lesson-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 100%"></div>
+                        </div>
+                        <span>100% Complete</span>
+                    </div>
+                    <div class="lesson-meta">
+                        <span>📚 6 lessons</span>
+                        <span>⏱️ 5 hours</span>
+                        <span>🏆 Certificate Earned</span>
+                    </div>
+                    <button class="btn-outline">Review</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="all">
+            <div class="lessons-filter">
+                <input type="text" placeholder="Search lessons...">
+                <select>
+                    <option value="">All Courses</option>
+                    <option value="forex-fundamentals">Forex Fundamentals</option>
+                    <option value="technical-analysis">Technical Analysis</option>
+                    <option value="risk-management">Risk Management</option>
+                </select>
+            </div>
+            <div class="lessons-list">
+                <div class="lesson-card">
+                    <div class="lesson-header">
+                        <h3>Forex Fundamentals - Module 3</h3>
+                        <span class="lesson-status in-progress">In Progress</span>
+                    </div>
+                    <p class="lesson-description">Understanding Support and Resistance Levels</p>
+                    <div class="lesson-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 65%"></div>
+                        </div>
+                        <span>65% Complete</span>
+                    </div>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-header">
+                        <h3>Technical Analysis - Module 1</h3>
+                        <span class="lesson-status in-progress">In Progress</span>
+                    </div>
+                    <p class="lesson-description">Introduction to Charting and Technical Indicators</p>
+                    <div class="lesson-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 25%"></div>
+                        </div>
+                        <span>25% Complete</span>
+                    </div>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-header">
+                        <h3>Getting Started with Forex - Module 1</h3>
+                        <span class="lesson-status completed">Completed</span>
+                    </div>
+                    <p class="lesson-description">Introduction to the Foreign Exchange Market</p>
+                    <div class="lesson-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 100%"></div>
+                        </div>
+                        <span>100% Complete</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content footer-compact">
+            <div class="footer-brand"><span class="footer-kicker">Billionaire Traders Academy</span><p>Learn with discipline. Trade with confidence.</p></div>
+            <div class="footer-column"><h4>Navigate</h4><a href="dashboard.html">Dashboard</a><a href="courses.html">Courses</a><a href="profile.html">Profile</a></div>
+            <div class="footer-column"><h4>Contact</h4><a href="mailto:support@billionairetradersacademy.com">Email the academy</a><a href="tel:+254748446403">+254 748 446 403</a></div>
+        </div>
+        <div class="footer-bottom"><span>&copy; 2026 Billionaire Traders Academy.</span><span><a href="#">Privacy</a><a href="#">Terms</a></span></div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                
+                this.classList.add('active');
+                document.getElementById(this.dataset.tab).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
