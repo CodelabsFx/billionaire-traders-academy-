@@ -51,6 +51,20 @@ app.use('/uploads', express.static(path.join(__dirname, '..', 'uploads')));
 
 app.get('/api/ping', (req, res) => res.json({ ok: true, env: process.env.NODE_ENV || 'development' }));
 
+const publicPages = ['/', '/index.html', '/courses.html', '/gold-trading.html', '/course.html'];
+function publicSiteUrl() {
+    return (process.env.PUBLIC_SITE_URL || `http://localhost:${PORT}`).replace(/\/$/, '');
+}
+
+app.get('/robots.txt', (req, res) => {
+    res.type('text/plain').send(`User-agent: *\nAllow: /\nDisallow: /admin.html\nDisallow: /dashboard.html\nDisallow: /lessons.html\nDisallow: /profile.html\nDisallow: /settings.html\nDisallow: /api/\nDisallow: /uploads/\nSitemap: ${publicSiteUrl()}/sitemap.xml\n`);
+});
+
+app.get('/sitemap.xml', (req, res) => {
+    const urls = publicPages.map(page => `<url><loc>${publicSiteUrl()}${page === '/' ? '/' : page}</loc></url>`).join('');
+    res.type('application/xml').send(`<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls}</urlset>`);
+});
+
 app.use((err, req, res, next) => {
     console.error(err);
     const message = process.env.NODE_ENV === 'production' ? 'Internal Server Error' : (err.message || 'Internal Server Error');

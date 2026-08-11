@@ -9,8 +9,12 @@ serves the prepared frontend bundle and `/api/ping` is the health check.
 2. Create a managed MySQL database with Aiven, PlanetScale, Railway, or
    another MySQL provider; Render does not provide native managed MySQL.
 3. Set the database variables, `JWT_SECRET`, and `CORS_ORIGIN` in Render.
+   Set `PUBLIC_SITE_URL` to the exact public HTTPS URL, for example
+   `https://your-domain.com`.
 4. Apply `database/schema.sql` and all migrations once to the production DB.
-5. Verify `https://<service>.onrender.com/api/ping` after deployment.
+5. Verify `/api/ping`, `/robots.txt`, and `/sitemap.xml` after deployment.
+6. In Google Search Console, verify the domain, submit `/sitemap.xml`, and
+   request indexing for the homepage and public course pages.
 
 Render's local filesystem is ephemeral. Move production videos and documents
 to object storage before enabling uploads.

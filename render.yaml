@@ -3,7 +3,7 @@ services:
     name: billionaire-traders-api
     runtime: node
     rootDir: backend
-    buildCommand: npm install
+    buildCommand: npm ci
     startCommand: npm start
     healthCheckPath: /api/ping
     envVars:
@@ -24,4 +24,6 @@ services:
       - key: DB_NAME
         value: billionaire_traders_academy
       - key: CORS_ORIGIN
+        sync: false
+      - key: PUBLIC_SITE_URL
         sync: false
