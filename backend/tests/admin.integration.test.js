@@ -9,11 +9,13 @@ const pool = require('../config/database');
 const app = require('../server');
 
 describe('Admin integration endpoints', () => {
-  const adminToken = jwt.sign({ id: 1, role: 'admin', is_admin: 1 }, process.env.JWT_SECRET, { expiresIn: '1h' });
+  const adminToken = jwt.sign({ id: 1, role: 'admin', is_admin: 1, sid: 'session-1' }, process.env.JWT_SECRET, { expiresIn: '1h' });
 
   beforeEach(() => jest.clearAllMocks());
 
   test('GET /api/admin/users returns users for admin', async () => {
+    pool.execute.mockResolvedValueOnce([[{ id: 'session-1' }]]); // active session
+    pool.execute.mockResolvedValueOnce([{}]); // session last-seen update
     pool.execute.mockResolvedValueOnce([[{ id: 1, first_name: 'A', last_name: 'Admin', email: 'a@x.com', username: 'admin' }]]);
     const res = await request(app).get('/api/admin/users').set('Authorization', 'Bearer ' + adminToken);
     expect(res.statusCode).toBe(200);
@@ -22,6 +24,8 @@ describe('Admin integration endpoints', () => {
   });
 
   test('GET /api/admin/courses returns courses for admin', async () => {
+    pool.execute.mockResolvedValueOnce([[{ id: 'session-1' }]]); // active session
+    pool.execute.mockResolvedValueOnce([{}]); // session last-seen update
     pool.execute.mockResolvedValueOnce([[{ id: 5, title: 'C1' }]]);
     const res = await request(app).get('/api/admin/courses').set('Authorization', 'Bearer ' + adminToken);
     expect(res.statusCode).toBe(200);

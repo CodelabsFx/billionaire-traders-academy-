@@ -20,9 +20,11 @@ beforeEach(() => {
 test('register creates user and returns token and user', async () => {
   pool.execute.mockResolvedValueOnce([[]]); // check existing
   pool.execute.mockResolvedValueOnce([{ insertId: 101 }]); // insert result
+  pool.execute.mockResolvedValueOnce([{}]); // create session
+  pool.execute.mockResolvedValueOnce([{}]); // activity log
   bcrypt.hash.mockResolvedValue('hashed_pw');
 
-  const req = { body: { first_name: 'Test', last_name: 'User', email: 't@example.com', username: 'testuser', password: 'pass' } };
+  const req = { body: { first_name: 'Test', last_name: 'User', email: 't@example.com', username: 'testuser', password: 'StrongPassword1!' }, ip: '127.0.0.1', get: () => 'test' };
   const res = createRes();
 
   await register(req, res, (e) => { throw e; });
@@ -35,11 +37,14 @@ test('register creates user and returns token and user', async () => {
 });
 
 test('login returns token for valid credentials', async () => {
-  const userRow = { id: 102, first_name: 'L', last_name: 'G', email: 'l@example.com', username: 'loginuser', password_hash: 'hashed_pw', role: 'user', is_admin: 0 };
+  const userRow = { id: 102, first_name: 'L', last_name: 'G', email: 'l@example.com', username: 'loginuser', password_hash: 'hashed_pw', role: 'user', is_admin: 0, is_active: 1, failed_login_attempts: 0 };
   pool.execute.mockResolvedValueOnce([[userRow]]); // select user
   bcrypt.compare.mockResolvedValue(true);
+  pool.execute.mockResolvedValueOnce([{}]); // update login
+  pool.execute.mockResolvedValueOnce([{}]); // create session
+  pool.execute.mockResolvedValueOnce([{}]); // activity log
 
-  const req = { body: { identifier: 'loginuser', password: 'pass' } };
+  const req = { body: { identifier: 'loginuser', password: 'StrongPassword1!' }, ip: '127.0.0.1', get: () => 'test' };
   const res = createRes();
 
   await login(req, res, (e) => { throw e; });
